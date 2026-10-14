@@ -1,0 +1,25 @@
+ Independent Insurance — BOSTON_GOV_D8
+
+Company: Anticloud FZ LLE
+Model: PAX L5 Narrow L2 General 27B
+Project: BOSTON_GOV_D8 | Category: GOVERNMENT
+Upstream: https://github.com/cityofboston/boston.gov-d8 (MIT)
+
+ Overview
+
+This document covers independent insurance for the Anticloud integration of BOSTON_GOV_D8.
+
+City of Boston open-source website
+
+ Anticloud Integration
+
+PAX L5 Narrow L2 General 27B is integrated into BOSTON_GOV_D8 to provide:
+- Local AI inference with zero cloud dependency
+- AIOSS tamper-evident audit chain
+- AES-256 encryption at rest
+- Single-binary deployment
+
+ Contact
+
+Lois-Kleinner Alpasan — CEO & CTO, Anticloud FZ LLE
+lois@0-1.gg | 0-1.gg
