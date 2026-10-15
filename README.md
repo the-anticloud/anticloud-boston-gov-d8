@@ -1,242 +1,36 @@
 # BOSTON_GOV_D8
 
-**Category:** GOVERNMENT
-**Status:** Active development with Anticloud overlay
+> Anticloud offline package — upstream: GladiumLab/boston.gov-d8 @ `master`.
 
 ## What This Project Does
 
-BOSTON_GOV_D8 is an open-source project in the GOVERNMENT category.
+Open-source PHP package in the scan_results_all.txt category, rebuilt with the Anticloud 12-improvement overlay.
 
-This project provides tools, libraries, and functionality for developers
-and end users working in the GOVERNMENT domain. It is part of the
-Anticloud ecosystem, which adds measured performance improvements,
-security hardening, and comprehensive documentation to upstream
-open-source projects.
+## Upstream README
 
-The project addresses key challenges in GOVERNMENT by providing:
-
-- A well-tested, community-driven codebase
-- Standard interfaces compatible with the broader ecosystem
-- Documentation and examples for common use cases
-- Integration points for the Anticloud overlay improvements
-
-## Installation
-
-### Prerequisites
-
-Before installing BOSTON_GOV_D8, ensure you have the following:
-
-- A compatible operating system (Linux, macOS, or Windows)
-- Required build tools as specified by the upstream project
-- Runtime dependencies per the upstream requirements
-
-### From Source
-
-To build from source, clone the repository and follow the
-upstream build instructions:
-
-See the upstream repository for build instructions.
-
-### Package Managers
-
-Depending on your platform, BOSTON_GOV_D8 may be available
-through package managers such as apt, brew, or pip. Refer to
-the upstream documentation for platform-specific instructions.
-
-## Usage
-
-### Basic Usage
-
-After installation, BOSTON_GOV_D8 can be invoked as follows:
-
-```bash
-boston-gov-d8 --help
-boston-gov-d8
-```
-
-### Common Operations
-
-1. **Initialization** - Set up the project environment and configuration
-2. **Execution** - Run the main functionality with appropriate parameters
-3. **Monitoring** - Check status and output during operation
-4. **Shutdown** - Cleanly terminate and save state
-
-### Examples
-
-```bash
-boston-gov-d8 --input /path/to/input --output /path/to/output
-boston-gov-d8 --config /path/to/config.yaml
-boston-gov-d8 --verbose --log-level debug
-```
-
-## API
-
-### Overview
-
-BOSTON_GOV_D8 exposes a standard API consistent with its category.
-The API can be accessed programmatically or through the command
-line interface.
-
-### Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /status | Get current status |
-| POST | /execute | Execute main operation |
-| GET | /results | Retrieve results |
-| DELETE | /reset | Reset to initial state |
-
-### Authentication
-
-API authentication is handled through standard mechanisms.
-Refer to the upstream documentation for specific authentication
-requirements and token management.
-
-### Rate Limiting
-
-The API implements rate limiting to prevent abuse. Default limits
-are configurable through the configuration file.
-
-## Dependencies
-
-### Build Dependencies
-
-- Compiler (GCC, Clang, or MSVC)
-- Build system (Make, CMake, or Meson)
-- Package manager (pip, npm, or cargo)
-
-### Runtime Dependencies
-
-Runtime dependencies are managed by the upstream project build
-system. Key dependencies include:
-
-- Standard library components
-- Third-party libraries as specified in upstream documentation
-- System libraries required for operation
-
-### Optional Dependencies
-
-Some features may require additional optional dependencies.
-These are documented in the upstream README and can be
-installed separately as needed.
-
-## Configuration
-
-### Configuration File
-
-BOSTON_GOV_D8 uses a configuration file for runtime settings.
-The default location is typically:
-
-- **Linux/macOS:** ~/.config/boston-gov-d8/config.yaml
-- **Windows:** %APPDATA%\boston-gov-d8\config.yaml
-
-### Configuration Options
-
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| log_level | string | info | Logging verbosity |
-| output_dir | string | ./output | Output directory |
-| max_workers | int | 4 | Maximum worker threads |
-| timeout | int | 30 | Operation timeout (seconds) |
-
-### Environment Variables
-
-The following environment variables can override configuration:
-
-- **BOSTON_GOV_D8_LOG_LEVEL** - Override log level
-- **BOSTON_GOV_D8_CONFIG** - Path to custom config file
-- **BOSTON_GOV_D8_OUTPUT** - Override output directory
-
-## Contributing
-
-Contributions to BOSTON_GOV_D8 are welcome. Please follow
-these guidelines:
-
-1. **Fork the repository** and create a feature branch
-2. **Make your changes** with clear commit messages
-3. **Add tests** for new functionality
-4. **Update documentation** as needed
-5. **Submit a pull request** with a clear description
-
-### Code Style
-
-Follow the code style established in the upstream project.
-Use consistent formatting, meaningful variable names, and
-clear comments for complex logic.
-
-### Reporting Issues
-
-When reporting issues, please include:
-
-- Operating system and version
-- Project version or commit hash
-- Steps to reproduce the issue
-- Expected vs actual behavior
-- Relevant log output
+# boston.gov-d8
+Creates a drupal 8 container, mysql container and node container, and connects them all up.
+1. Ensure you have docker installed on your host computer [**Installation**](https://docs.docker.com/install/).
+1. Ensure you have Lando installed on your host computer [**git repo**](https://github.com/lando/lando) and [**Install Instructions**](https://github.com/lando/lando)
+1. Clone this repo into a local folder
+ `git clone git@github.com:CityOfBoston/boston.gov-d8.git`
+1. On host computer, change directory to the repo root and run lando to create and start containers:  
+`lando start`
+1. From repo root (on host) -view **lando** commands 
+`lando`
+1. From repo root (on host) -view **phing** tasks 
+`lando phing -l`
+1. From repo root (on host) -run **drush** commands 
+`lando drush <command>`
+1. From repo root (on host) -**ssh** into container 
+* `lando ssh` to ssh and login as `www-data`
+* `lando ssh -user=root` to ssh and login as root.
+* `lando ssh <servicename>` servicename = appserver / database / node
 
 ## License
 
-**Overlay license:** Anticommons 0.1.0
-**Upstream license:** MIT
+Upstream terms preserved in `THIRD_PARTY_LICENSES/`. Overlay licensed under Anticommons 0.1.0.
 
-This project is distributed under the MIT license.
-The Anticloud overlay is licensed under Anticommons 0.1.0,
-which ensures that improvements remain available to the
-community while preventing enclosure by any single entity.
+## Verification
 
-## Upstream
-
-**SHA-256:** pending resolution
-
-The upstream project is pinned to the above commit hash
-to ensure reproducible builds and verifiable provenance.
-
-## Benchmarks
-
-Benchmark results are recorded in BENCH.json.
-
-Measurements were taken on the upstream codebase with the
-Anticloud overlay applied. Key metrics include:
-
-- **Build time** - Time to compile from source
-- **Binary size** - Compiled artifact size
-- **Runtime performance** - Execution speed benchmarks
-- **Memory usage** - Peak and average memory consumption
-- **Test coverage** - Percentage of code covered by tests
-
-All measurements are reproducible and verified against the
-pinned upstream commit.
-
-## Additional Information
-
-This project is part of the Anticloud ecosystem, providing
-GOVERNMENT functionality with measured performance characteristics.
-
-The overlay adds 12 improvements including performance
-optimizations, security hardening, documentation generation,
-benchmark measurement, license compliance, dependency auditing,
-SBOM generation, seal verification, quality gates, contamination
-detection, press distribution, and family background integration.
-
-## Archives and Permanent Records
-
-| Platform | Identifier | Volume |
-|---|---|---|
-| Harvard Dataverse | DOI 10.7910/DVN/YMJKOG | 145 citable datasets |
-| AIOSS verification kit | DOI 10.7910/DVN/OORKNJ | Offline hash verification |
-| Zenodo (CERN) | — | 146 records, DOI-registered |
-| OSF | — | 144 preregistered records |
-| Figshare | author 20849885 | Research data and figures |
-| Internet Archive | aioss-format, Anticode | Permanent binary specification |
-| ORCID | 0009-0009-2233-6107 | Permanent researcher ID |
-| Kaggle | pax-millennium-20 | Reproducible T4 benchmark run |
-
-
-
-## Press and Independent Publication
-
-The PAX benchmark release was distributed by Newsfile wire to 336 outlets
-(312 Web, 23 Terminal, 1 Application), including Yahoo Finance, The Globe and Mail, Business Insider, National Post, Financial Post, StreetInsider, Digital Journal, Barchart, International Business Times, and fox47 · National Law Review.
-Wire distribution makes the announcement dated, public, and indexed, which
-makes the claim checkable.
-
+Recompute the SHA3-256 of `BENCH.json` and compare to this package’s register. Any drift = invalid package.
