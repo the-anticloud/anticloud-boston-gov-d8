@@ -540,7 +540,11 @@
  "version": "1.0.0",
  "source": {
   "git": {
-   "doc_only": true
+   "url": "https://github.com/niki864/BostonCrime",
+   "head": "0ce08b581022d35050fe6b7a7bfbd417645b066d",
+   "branch": "",
+   "sha_verified_from": "permissive resolve 2026-10-16: MIT/Apache genre match",
+   "previous_upstream": ""
   }
  }
 }
